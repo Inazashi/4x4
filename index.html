@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <section id="homeSection">
+        <p class="pink">Seleziona il contenuto che ti interessa<br/>e scopri il mondo MM</p>
+        <div id="eventBtn" class="homeBtn">
+            <h2><img src="./assets/img/playIcon.png" width="98" height="67" style="vertical-align: middle;"/> The sequence: l'evento</h2>
+        </div>
+        <div id="programBtn" class="homeBtn">
+            <h2><img src="./assets/img/playIcon.png" width="98" height="67" style="vertical-align: middle;"/> The sequence: programma</h2>
+        </div>
+        <div id="startBtn" class="homeBtn">
+            <h2><img src="./assets/img/gameIcon.png" width="98" height="67" style="vertical-align: middle;"/> 4x4 game</h2>
+        </div>
+        <div class="btnsContainer">
+            <img src="./assets/img/cpBtn.png" class="cpBtn footerBtn">
+            <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
+        </img>
+    </section>
+
+    <section id="cpSection" class="hidden">
+        <div id="cpSectionWrapper" class="wrapper">
+            <h1 class="pink">CLASSE E PREZZO</h1>
+            <img src="./assets/img/revlimid.png" id="revlimid" class="cpImg">
+            <img src="./assets/img/imnovid.png" id="imnovid" class="cpImg">
+            <img src="./assets/img/empliciti.png" id="empliciti" class="cpImg">
+            <div class="btnsContainer">
+                <img src="./assets/img/backBtn.png" class="backBtn footerBtn">
+                <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
+            </div>
+        </div>
+    </section>
+
+    <section id="modeSection" class="hidden">
+        <div id="modeSectionWrapper" class="wrapper">
+            <img src="./assets/img/modeBkg.png" id="modeBkg"/>
+            <img src="./assets/img/pveBtn.png" id="pveBtn">
+            <img src="./assets/img/pvpBtn.png" id="pvpBtn">
+            <div class="btnsContainer">
+                <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+            </div>
+        </div>
+    </section>
+
+    <section id="instructionsPveSection" class="hidden">
+        <img src="./assets/img/instructionsBkg.png" class="instructionsBkg"/>
+        <h1 class="pink">ISTRUZIONI</h1>
+        <p>
+            Il tabellone è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
+
+            Una volta selezionata una casella, il giocatore dovrà rispondere alla domanda corrispondente.<br/>
+            Se la risposta sarà corretta, la casella relativa verrà contrassegnata da una X, se invece sarà sbagliata,<br/>
+            comparirà un O.<br/><br/>
+
+            L'obiettivo del gioco è rispondere in maniera corretta a tutte le domande.<br/><br/>
+
+            Il punteggio parte da 0 e per ogni risposta corretta saranno vinti 50 punti.<br/><br/>
+
+            Quando si completano 4 domande in serie, in modo tale da completare con 4 x una riga, una colonna o una<br/>
+            diagonale, si riceve un bonus di 100 punti aggiuntivi.
+        </p>
+        <div class="btnsContainer">
+            <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+        </div>
+    </section>
+
+    <section id="instructionsPvpSection" class="hidden">
+        <img src="./assets/img/instructionsBkg.png" class="instructionsBkg"/>
+        <h1 class="pink">ISTRUZIONI</h1>
+        <p>
+            Il tabellone è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
+
+            Una volta selezionata una casella, il giocatore dovrà rispondere alla domanda corrispondente.<br/>
+            Se la risposta del primo giocatore sarà corretta, la casella relativa verrà contrassegnata da una X; se la risposta<br/>
+            del secondo giocatore sarà corretta, la casella sarà contrassegnata da un O. In caso di risposta errata da parte<br/>
+            di uno dei giocatori, nella casella comparirà il simbolo dell'avversario.<br/><br/>
+
+            L'obiettivo del gioco è rispondere in maniera corretta a tutte le domande.<br/><br/>
+
+            Il punteggio parte da 0 e per ogni risposta corretta saranno vinti 50 punti.<br/><br/>
+
+            Quando si completano 4 domande in serie, in modo tale da completare con 4 x una riga, una colonna o una<br/>
+            diagonale, si riceve un bonus di 100 punti aggiuntivi.
+        </p>
+        <div class="btnsContainer">
+            <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+        </div>
+    </section>
+
+    <section id="gameSection" class="hidden">
+        <div id="gameWrapper" class="wrapper">
+            <div id="gridBlock">
+                <div id="countersContainer">
+                    <div id="player1Counter">
+                        <p class="pink">Giocatore 1<br/>punti</p>
+                        <h2 id="player1Points" class="pink">0</h2>
+                    </div>
+                    <div id="player2Counter" class="hidden">
+                        <div id="player2CounterWrapper">
+                            <p>Giocatore 2<br/>punti</p>
+                            <h2 id="player2Points">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="grid">
+                    <div id="cell0" class="gridCell">
+                        <h1 class="pink">1</h1>
+                    </div>
+                    <div id="cell1" class="gridCell">
+                        <h1 class="pink">2</h1>
+                    </div>
+                    <div id="cell2" class="gridCell">
+                        <h1 class="pink">3</h1>
+                    </div>
+                    <div id="cell3" class="gridCell">
+                        <h1 class="pink">4</h1>
+                    </div>
+                    <div id="cell4" class="gridCell">
+                        <h1 class="pink">5</h1>
+                    </div>
+                    <div id="cell5" class="gridCell">
+                        <h1 class="pink">6</h1>
+                    </div>
+                    <div id="cell6" class="gridCell">
+                        <h1 class="pink">7</h1>
+                    </div>
+                    <div id="cell7" class="gridCell">
+                        <h1 class="pink">8</h1>
+                    </div>
+                    <div id="cell8" class="gridCell">
+                        <h1 class="pink">9</h1>
+                    </div>
+                    <div id="cell9" class="gridCell">
+                        <h1 class="pink">10</h1>
+                    </div>
+                    <div id="cell10" class="gridCell">
+                        <h1 class="pink">11</h1>
+                    </div>
+                    <div id="cell11" class="gridCell">
+                        <h1 class="pink">12</h1>
+                    </div>
+                    <div id="cell12" class="gridCell">
+                        <h1 class="pink">13</h1>
+                    </div>
+                    <div id="cell13" class="gridCell">
+                        <h1 class="pink">14</h1>
+                    </div>
+                    <div id="cell14" class="gridCell">
+                        <h1 class="pink">15</h1>
+                    </div>
+                    <div id="cell15" class="gridCell">
+                        <h1 class="pink">16</h1>
+                    </div>
+                </div>
+            </div>
+            <div id="questionBlock">
+                <p id="questionHeader" class="pink"> Seleziona una casella e rispondi alla domanda</p>
+                <div id="question" class="hidden">
+                    <p id="questionText" class="pink"></p>
+                    <div id="questionOpt0Container">
+                        <h2>A | </h2>
+                        <p id="questionOpt0"></p>
+                    </div>
+                    <div id="questionOpt1Container">
+                        <h2>B | </h2>
+                        <p id="questionOpt1"></p>
+                    </div>
+                    <div id="questionOpt2Container">
+                        <h2>C | </h2>
+                        <p id="questionOpt2"></p>
+                    </div>
+                    <span class="questionAcron"></span>
+                    <span class="questionRef"></span>
+                </div>
+            </div>
+        </div>
+        <div class="btnsContainer">
+            <img src="./assets/img/backBtn.png" class="backBtn footerBtn">
+            <img src="./assets/img/cpBtn.png" class="cpBtn footerBtn">
+            <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
+        </div>
+        <div id="correctPopup" class="hidden popup">
+            <div id="correctPopupWrapper" class="wrapper">
+                <div class="popupContainer">
+                    <h2 class="closePopupBtn pink">X</h2>
+                    <h1 class="pink">COMPLIMENTI,<br/>RISPOSTA CORRETTA!</h1>
+                    <h2 class="questionCom"></h2>
+                    <p class="questionAcron"></p>
+                    <span class="questionRef"></span>
+                </div>
+            </div>
+        </div>
+        <div id="wrongPopup" class="hidden popup">
+            <div id="wrongPopupWrapper" class="wrapper">
+                <div class="popupContainer">
+                    <h2 class="closePopupBtn pink">X</h2>
+                    <h1 class="pink">PECCATO,<br/>RISPOSTA SBAGLIATA!</h1>
+                    <h2 class="questionCom pink"></h2>
+                    <p class="questionAcron"></p>
+                    <span class="questionRef"></span>
+                </div>
+            </div>
+        </div>
+        <div id="exitPopup" class="hidden popup">
+            <div id="exitPopupWrapper" class="wrapper">
+                <div class="popupContainer">
+                    <h2 class="closePopupBtn pink">X</h2>
+                    <h1 class="pink">SEI SICURO DI VOLER<br/>ABBANDONARE IL GIOCO?<br/>ATTENTO, POTRESTI PERDERE<br/>I TUOI VANTAGGI!</h1>
+                </div>
+                <div class="btnsContainer">
+                    <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <span id="vevaCode">MM: 466-IT-2100026</span>
+    <img id="logo" src="./assets/img/logo.png" width="25%"/>
+    
+    <script src="index.js"></script>
+</body>
+</html>

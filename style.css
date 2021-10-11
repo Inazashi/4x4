@@ -1,0 +1,345 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7);
+    background: rgb(255,250,245);
+    background: radial-gradient(circle, rgba(255,250,245,1) 30%, rgba(254,239,213,1) 100%);
+    overflow: hidden;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.pink {
+    color: rgb(170, 65, 136);
+}
+
+.btnsContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    bottom: 15px;
+    right: 20px;
+    width: fit-content;
+    height: 7%;
+}
+
+.footerBtn {
+    margin-left: 3%;
+}
+
+/*-----HOME SECTION-----*/
+
+#homeSection {
+    background-repeat: no-repeat;
+    background-size: auto 60%;
+    background-position: top right;
+    background-image: url("./assets/img/homeBkg.png");
+}
+
+#homeSection p {
+    width: fit-content;
+    padding-top: 7%;
+    padding-bottom: 10px;
+    padding-left: 10%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.homeBtn {
+    display: flex;
+    width: fit-content;
+    margin: 3% 10%;
+    align-content: center;
+}
+
+/*-----CP SECTION-----*/
+
+#cpSectionWrapper {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: auto 17%;
+    background-position: top right;
+    background-image: url("./assets/img/globalBkg.png");
+    align-items: center;
+}
+
+#cpSection.hidden {
+    display: none;
+}
+
+#cpSection h1 {
+    position: absolute;
+    top: 13%;
+    left: 7%;
+}
+
+#revlimid {
+    height: 23%;
+}
+
+#imnovid {
+    height: 18%;
+}
+
+#empliciti {
+    height: 20%;
+}
+
+.cpImg {
+    width: 25%;
+    margin: auto;
+}
+
+/*-----MODE SECTION-----*/
+
+#modeSectionWrapper {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: auto 17%;
+    background-position: top right;
+    background-image: url("./assets/img/globalBkg.png");
+    align-items: center;
+}
+
+#modeSection.hidden {
+    display: none;
+}
+
+#modeBkg {
+    position: absolute;
+    height: 100%;
+}
+
+#pveBtn {
+    height: 40%;
+    margin-right: 50px;
+    margin-left: auto;
+    z-index: 1;
+}
+
+#pvpBtn {
+    height: 40%;
+    margin-right: auto;
+    margin-left: 50px;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1025px) {
+    #modeBkg {
+        margin: 0 20%;
+    }
+}
+
+/*-----INSTRUCTIONS SECTIONS-----*/
+
+#instructionsPveSection, #instructionsPvpSection {
+    background-repeat: no-repeat;
+    background-size: auto 17%;
+    background-position: top right;
+    background-image: url("./assets/img/globalBkg.png");
+}
+
+.instructionsBkg {
+    position: absolute;
+    height: 50%;
+}
+
+#instructionsPveSection h1, #instructionsPvpSection h1 {
+    margin-top: 20%;
+}
+
+#instructionsPveSection h1, #instructionsPvpSection h1, #instructionsPveSection p, #instructionsPvpSection p {
+    margin-left: 12%;
+}
+
+@media screen and (min-width: 1025px) {
+    #instructionsPveSection h1, #instructionsPvpSection h1 {
+        margin-top: 12%;
+    }
+    
+    #instructionsPveSection h1, #instructionsPvpSection h1, #instructionsPveSection p, #instructionsPvpSection p {
+        margin-left: 8%;
+    }
+}
+
+/*-----GAME SECTION-----*/
+
+#gameSection {
+    background-repeat: no-repeat;
+    background-size: auto 17%;
+    background-position: top right;
+    background-image: url("./assets/img/globalBkg.png");
+}
+
+#gameWrapper, #countersContainer, #player1Counter, #player2CounterWrapper {
+    display: flex;
+}
+
+#gridBlock {
+    width: 60%;
+    height: 100%;
+    margin-left: 6%;
+}
+
+#countersContainer {
+    margin-top: 3%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#player1Counter, #player2Counter {
+    margin: auto;
+    text-align: right;
+    align-items: center;
+}
+
+#player2Counter.hidden {
+    display: none;
+}
+
+#player1Counter p, #player2Counter p {
+    padding-right: 10px;
+    border-right: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+#player1Counter p {
+    border-right: 2px solid  rgb(170, 65, 136);
+}
+
+#player1Counter h2, #player2Counter h2 {
+    padding-left: 10px;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gridCell {
+    width: 24.74%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#cell0, #cell1, #cell2, #cell3 {
+    border-top: 0px;
+}
+
+#cell0, #cell4, #cell8, #cell12 {
+    border-left: 0px;
+}
+
+#cell3, #cell7, #cell11, #cell15 {
+    border-right: 0px;
+}
+
+#cell12, #cell13, #cell14, #cell15 {
+    border-bottom: 0px;
+}
+
+.gridCell h1 {
+    font-size: 6rem;
+    margin: 17px;
+    color: rgba(170, 65, 136, 0.25);
+}
+
+.player1 {
+    background-image: url("./assets/img/circle.png");
+    color: rgba(170, 65, 136, 0);
+}
+
+.player2 {
+    background-image: url("./assets/img/cross.png");
+    color: rgba(170, 65, 136, 0);
+}
+
+#questionBlock {
+    width: 32%;
+    margin-top: 20%;
+    margin-left: 2%;
+}
+
+#questionHeader {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#correctPopupWrapper, #wrongPopupWrapper, #exitPopupWrapper {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* background-image: url("./assets/img/popupBkg.png"); */
+    background-position: center;
+    z-index: 1;
+}
+
+#correctPopup.hidden, #wrongPopup.hidden, #exitPopup.hidden {
+    display: none;
+}
+
+.popup h1 {
+    margin: 0;
+}
+
+.closePopupBtn {
+    width: fit-content;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+/*-----GLOBAL-----*/
+
+#vevaCode {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.7rem;
+}
+
+#logo {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
