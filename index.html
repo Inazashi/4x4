@@ -5,38 +5,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/uil4svx.css">
     <link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src=https://player.vimeo.com/api/player.js></script>
 </head>
 <body>
     
     <section id="homeSection">
-        <p class="pink">Seleziona il contenuto che ti interessa<br/>e scopri il mondo MM</p>
+        <p class="light-pink">Seleziona il contenuto che ti interessa<br/>e scopri il mondo del Mieloma Multiplo</p>
+        <div id="videosBtn" class="homeBtn">
+            <div style="display: flex; align-items: center;">
+                <img src="./assets/img/playIcon.png" width="130" height="67" style="vertical-align: middle;"/>
+                <h2>Informazioni sul prossimo<br/>evento: The Sequence</h2>
+            </div>
+        </div>
+        <div id="gameBtn" class="homeBtn">
+            <h2><img src="./assets/img/playIcon.png" width="130" height="67" style="vertical-align: middle;"/>Materiale di informazione medico-scientifica</h2>
+        </div>
+    </section>
+
+    <section id="homeSectionVideos" class="hidden">
+        <p class="light-pink">Seleziona il contenuto che ti interessa<br/>e scopri il mondo del Mieloma Multiplo</p>
         <div id="eventBtn" class="homeBtn">
-            <h2><img src="./assets/img/playIcon.png" width="98" height="67" style="vertical-align: middle;"/> The sequence: l'evento</h2>
+            <h2><img src="./assets/img/playIcon.png" width="130" height="67" style="vertical-align: middle;"/>The Sequence: l'Evento</h2>
         </div>
         <div id="programBtn" class="homeBtn">
-            <h2><img src="./assets/img/playIcon.png" width="98" height="67" style="vertical-align: middle;"/> The sequence: programma</h2>
-        </div>
-        <div id="startBtn" class="homeBtn">
-            <h2><img src="./assets/img/gameIcon.png" width="98" height="67" style="vertical-align: middle;"/> 4x4 game</h2>
+            <h2><img src="./assets/img/playIcon.png" width="130" height="67" style="vertical-align: middle;"/>The Sequence: Programma</h2>
         </div>
         <div class="btnsContainer">
-            <img src="./assets/img/cpBtn.png" class="cpBtn footerBtn">
-            <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
-        </img>
+            <img src="./assets/img/backBtn1.png" class="backBtn footerBtn">
+        </div>
+    </section>
+
+    <section id="homeSectionGame" class="hidden">
+        <p class="light-pink">Seleziona il contenuto che ti interessa<br/>e scopri il mondo del Mieloma Multiplo</p>
+        <div id="startBtn" class="homeBtn">
+            <h2><img src="./assets/img/gameIcon.png" width="130" height="67" style="vertical-align: middle;"/>4x4 game</h2>
+        </div>
+        <div class="btnsContainer">
+            <img src="./assets/img/backBtn1.png" class="backBtn footerBtn">
+        </div>
+    </section>
+
+    <section id="refSection" class="hidden">
+        <div id="refSectionWrapper" class="wrapper">
+            <h1 class="pink">BIBLIOGRAFIA</h1>
+            <div class="refCol">
+                <img src="./assets/img/revlimid.png" class="revlimid">
+                <p>
+                    Durie BGM, et al. BloodCancer J. 2020;10(5):53. doi: 10.1038/s41408/s41408-020-0311-8.<br/><br/>
+                    Merz M, et al. ANN Hematol. 2020;99(8):1709-1725. doi: 10.1007/s00277-020-04023-4.<br/><br/>
+                    Durie BGM, et al. BloodCancer J. 2020;10(5):53. doi: 10.1038/s41408/s41408-020-0311-8.<br/><br/>
+                    Holstein SA, et al. Lancet Haematol. 2017; 4(9): e431-e442.<br/><br/>
+                    Revlimid. Riassunto delle Caratteristiche del Prodotto.
+                </p>
+            </div>
+            <div class="refCol">
+                <img src="./assets/img/imnovid.png" class="imnovid">
+                <p>
+                    "Richardson PG, et al. Lancet Oncol .2019;20(6):781-794. doi: 10.1016/S1470-2045(19)30152-4."<br/><br/>
+                    Imnovid. Riassunto delle Caratteristiche del Prodotto.<br/><br/>
+                    "Dimopoulos M, et al. Leukemia. 2021;35(6):1722-1731. doi: 10.1038/s41375-020-01021-3."
+                    "Richardson PG, et al. Lancet Oncol .2019;20(6):781-794. doi: 10.1016/S1470-2045(19)30152-4."<br/><br/>
+                </p>
+            </div>
+            <div class="refCol">
+                <img src="./assets/img/empliciti.png" class="empliciti">
+                <p>
+                    "Richardson PG, et al. Lancet Oncol .2019;20(6):781-794. doi: 10.1016/S1470-2045(19)30152-4."<br/><br/>
+                    Empliciti. Riassunto delle Caratteristiche del Prodotto.<br/><br/>
+                    Dimopoulos MA, et al. N Engl J Med. 2018;379(19):1811-1822.
+                </p>
+            </div>
+            <div class="btnsContainer" style="align-items: center;">
+                <img src="./assets/img/closeBtn.png" style="max-height: 85%;" class="backBtn footerBtn">
+            </div>
+            <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
+        </div>
     </section>
 
     <section id="cpSection" class="hidden">
         <div id="cpSectionWrapper" class="wrapper">
             <h1 class="pink">CLASSE E PREZZO</h1>
-            <img src="./assets/img/revlimid.png" id="revlimid" class="cpImg">
-            <img src="./assets/img/imnovid.png" id="imnovid" class="cpImg">
-            <img src="./assets/img/empliciti.png" id="empliciti" class="cpImg">
-            <div class="btnsContainer">
-                <img src="./assets/img/backBtn.png" class="backBtn footerBtn">
-                <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
+            <div class="cpCol">
+                <img src="./assets/img/revlimid.png" class="revlimid">
+                <img src="assets/img/rcpBtn.png" id="revlimidRcpBtn" style="max-width: 40px; margin-top: 50px;">
+                <p>
+                    REVLIMID<br/>
+                    Classificazione ai fini della fornitura: RNRL - Centro ospedaliero, oncologo, ematologo, internista<br/>
+                    Classe di rimborsabilità: H<br/>
+                    Prezzo al pubblico (IVA inclusa):<br/>
+                    Revlimid® 2,5 mg, 21 capsule - AIC n. 038016059/E: €8.384,03; Revlimid 2,5 mg, 7 capsule - AIC n. 038016073/E: €2.794,68;<br/>
+                    Revlimid® 5 mg, 21 capsule - AIC n. 038016010/E: €8.733,92; Revlimid 5 mg, 7 capsule - AIC n. 038016085/E: €2.911,30;<br/>
+                    Revlimid® 10 mg, 21 capsule - AIC n. 038016022/E: €9.219,13; Revlimid 10 mg, 7 capsule - AIC n. 038016109/E: €3.073,04;<br/>
+                    Revlimid® 15 mg, 21 capsule - AIC n. 038016034/E: €9.704,35; Revlimid 15 mg, 7 capsule - AIC n. 038016111/E: €3.234,78;<br/>
+                    Revlimid® 20 mg, 21 capsule - AIC n. 038016097/E: €10.173,07; Revlimid 25 mg, 21 capsule - AIC n. 038016046/E: €10.640,13;<br/>
+                    Revlimid® 20 mg, 7 capsule - AIC n. 038016135/E: €3.391,02; Revlimid 25 mg, 7 capsule - AIC n. 038016147/E: €3.546,69;<br/>
+                    I prezzi riportati non sono comprensivi delle riduzioni temporanee di cui alla Determinazione AIFA del 3 luglio 2006 e del 27 settembre 2006.<br/><br/>
+                    L'indicazione "Revlimid® in regime terapeutico di associazione con melfalan e prednisone per il trattamento di pazienti adulti<br/>
+                    con mieloma multiplo non precedentemente trattato che non sono eleggibili al trapianto" NON è stata rimborsata dal SSN
+                </p>
             </div>
+            <div class="cpCol">
+                <img src="./assets/img/imnovid.png" class="imnovid">
+                <img src="assets/img/rcpBtn.png" id="imnovidRcpBtn" style="max-width: 40px; margin-top: 50px;">
+                <p>
+                    IMNOVID<br/>
+                    Classificazione ai fini della fornitura: RNRL - Centro ospedaliero, oncologo, ematologo, internista<br/>
+                    Classe di rimborsabilità: H<br/>
+                    Prezzo al pubblico (IVA inclusa):<br/>
+                    Imnovid® 1 mg, 14 capsule - AIC n. 042927057/E: € 10.832,13; Imnovid® 2 mg, 14 capsule - AIC n. 042927069/E: € 10.832,13;<br/>
+                    Imnovid® 3 mg, 14 capsule - AIC n. 042927071/E: € 10.832,13; Imnovid® 4 mg, 14 capsule - AIC n. 042927083/E: € 10.832,13;<br/>
+                    Imnovid® 1 mg, 21 capsule - AIC n. 042927018/E: € 16.248,19; Imnovid® 2 mg, 21 capsule - AIC n. 042927020/E: € 16.248,19;<br/>
+                    Imnovid® 3 mg, 21 capsule - AIC n. 042927032/E: € 16.248,19; Imnovid® 4 mg, 21 capsule - AIC n. 042927044/E: € 16.248,19;<br/>
+                    I prezzi riportati non sono comprensivi delle riduzioni temporanee di cui alla Determinazione AIFA del 3 luglio 2006 e del 27<br/>
+                    settembre 2006.
+                </p>
+            </div>
+            <div class="cpCol">
+                <img src="./assets/img/empliciti.png" class="empliciti">
+                <img src="assets/img/rcpBtn.png" id="emplicitiRcpBtn" style="max-width: 40px; margin-top: 50px;">
+                <p>
+                    Empliciti<br/>
+                    Classificazione ai fini della fornitura: OSP - medicinale soggetto a prescrizione medica limitativa, utilizzabile esclusivamente in<br/>
+                    ambiente ospedaliero o in struttura ad esso assimilabile.<br/>
+                    Uso riservato agli ospedali, alle cliniche e alle case di cura. Vietata la vendita al pubblico.<br/>
+                    Classe di rimborsabilità: H<br/>
+                    Prezzo al pubblico (IVA inclusa):<br/>
+                    Empliciti® 400 mg polvere per concentrato per soluzione per infusione - 1 flaconcino - AIC n. 044873026/E: € 2.736,64;<br/>
+                    Empliciti® 300 mg polvere per concentrato per soluzione per infusione - 1 flaconcino - AIC n. 044873014/E: € 2.052,48;<br/>
+                    I prezzi riportati non sono comprensivi delle riduzioni temporanee di cui alla Determinazione AIFA del 3 luglio 2006 e del 27 settembre<br/>
+                    2006.
+                </p>
+            </div>
+            <div class="btnsContainer" style="align-items: center;">
+                <img src="./assets/img/closeBtn.png" style="max-height: 85%;" class="backBtn footerBtn">
+            </div>
+            <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
         </div>
     </section>
 
@@ -46,8 +152,9 @@
             <img src="./assets/img/pveBtn.png" id="pveBtn">
             <img src="./assets/img/pvpBtn.png" id="pvpBtn">
             <div class="btnsContainer">
-                <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+                <img src="./assets/img/backBtn1.png" class="backBtn footerBtn">
             </div>
+            <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
         </div>
     </section>
 
@@ -55,45 +162,47 @@
         <img src="./assets/img/instructionsBkg.png" class="instructionsBkg"/>
         <h1 class="pink">ISTRUZIONI</h1>
         <p>
-            Il tabellone è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
+            Il quadrante è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
 
             Una volta selezionata una casella, il giocatore dovrà rispondere alla domanda corrispondente.<br/>
             Se la risposta sarà corretta, la casella relativa verrà contrassegnata da una X, se invece sarà sbagliata,<br/>
             comparirà un O.<br/><br/>
 
-            L'obiettivo del gioco è rispondere in maniera corretta a tutte le domande.<br/><br/>
+            L'obiettivo del gioco è rispondere in maniera corretta a più domande possibile fino al completamento<br/>
+            del quadrante.<br/><br/>
 
-            Il punteggio parte da 0 e per ogni risposta corretta saranno vinti 50 punti.<br/><br/>
-
-            Quando si completano 4 domande in serie, in modo tale da completare con 4 x una riga, una colonna o una<br/>
-            diagonale, si riceve un bonus di 100 punti aggiuntivi.
+            Per ogni risposta corretta si acquisiscono 50 punti. Inoltre, quando si completano 4 domande<br/>
+            corrette in serie, arrivando a completare con 4 O consecutivi una riga, una colonna o una diagonale,<br/>
+            si riceve un bonus di 100 punti aggiuntivi.
         </p>
         <div class="btnsContainer">
             <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
         </div>
+        <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
     </section>
 
     <section id="instructionsPvpSection" class="hidden">
         <img src="./assets/img/instructionsBkg.png" class="instructionsBkg"/>
         <h1 class="pink">ISTRUZIONI</h1>
         <p>
-            Il tabellone è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
+            Il quadrante è composto da 16 caselle, ognuna delle quali nasconde una domanda.<br/><br/>
 
-            Una volta selezionata una casella, il giocatore dovrà rispondere alla domanda corrispondente.<br/>
-            Se la risposta del primo giocatore sarà corretta, la casella relativa verrà contrassegnata da una X; se la risposta<br/>
-            del secondo giocatore sarà corretta, la casella sarà contrassegnata da un O. In caso di risposta errata da parte<br/>
-            di uno dei giocatori, nella casella comparirà il simbolo dell'avversario.<br/><br/>
+            Al primo giocatore verrà attribuito il simbolo X, al secondo il simbolo O.<br/>
+            A turno, ogni giocatore dovrà cliccare sulla casella desiderata e rispondere alla domanda che si presenta.<br/>
+            In caso di risposta corretta, la casella selezionata verrà marcata con il proprio simbolo; in caso di risposta errata,<br/>
+            comparirà invece il simbolo dell'avversario.<br/><br/>
 
-            L'obiettivo del gioco è rispondere in maniera corretta a tutte le domande.<br/><br/>
+            L'obiettivo del gioco è rispondere in maniera corretta a più domande rispetto all'avversario, fino al completamento<br/>
+            del quadrante.<br/><br/>
 
-            Il punteggio parte da 0 e per ogni risposta corretta saranno vinti 50 punti.<br/><br/>
-
-            Quando si completano 4 domande in serie, in modo tale da completare con 4 x una riga, una colonna o una<br/>
-            diagonale, si riceve un bonus di 100 punti aggiuntivi.
+            Per ogni risposta corretta si acquisiscono 50 punti. Inoltre, quando si completano 4 domande corrette in serie,<br/>
+            arrivando a completare con 4 X o O consecutivi una riga, una colonna o una diagonale, si riceve un bonus di 100<br/>
+            punti aggiuntivi.
         </p>
         <div class="btnsContainer">
             <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
         </div>
+        <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
     </section>
 
     <section id="gameSection" class="hidden">
@@ -101,13 +210,15 @@
             <div id="gridBlock">
                 <div id="countersContainer">
                     <div id="player1Counter">
-                        <p class="pink">Giocatore 1<br/>punti</p>
-                        <h2 id="player1Points" class="pink">0</h2>
+                        <img src="./assets/img/cross.png" style="max-width: 50px; margin-right: 15px;">
+                        <p>Giocatore 1<br/>punti</p>
+                        <h2 id="player1Points">0</h2>
                     </div>
                     <div id="player2Counter" class="hidden">
                         <div id="player2CounterWrapper">
-                            <p>Giocatore 2<br/>punti</p>
-                            <h2 id="player2Points">0</h2>
+                            <img src="./assets/img/circle.png" style="max-width: 50px; margin-right: 15px;">
+                            <p class="light-pink">Giocatore 2<br/>punti</p>
+                            <h2 id="player2Points" class="pink">0</h2>
                         </div>
                     </div>
                 </div>
@@ -163,23 +274,23 @@
                 </div>
             </div>
             <div id="questionBlock">
-                <p id="questionHeader" class="pink"> Seleziona una casella e rispondi alla domanda</p>
+                <p id="questionHeader" class="light-pink"> Seleziona una casella e rispondi alla domanda</p>
                 <div id="question" class="hidden">
-                    <p id="questionText" class="pink"></p>
-                    <div id="questionOpt0Container">
-                        <h2>A | </h2>
-                        <p id="questionOpt0"></p>
+                    <p id="questionText" class="light-pink"></p>
+                    <div id="questionOpt0Container" class="questionOptContainer">
+                        <h2>A</h2>
+                        <p id="questionOpt0" class="questionOpt"></p>
                     </div>
-                    <div id="questionOpt1Container">
-                        <h2>B | </h2>
-                        <p id="questionOpt1"></p>
+                    <div id="questionOpt1Container" class="questionOptContainer">
+                        <h2>B</h2>
+                        <p id="questionOpt1" class="questionOpt"></p>
                     </div>
-                    <div id="questionOpt2Container">
-                        <h2>C | </h2>
-                        <p id="questionOpt2"></p>
+                    <div id="questionOpt2Container" class="questionOptContainer">
+                        <h2>C</h2>
+                        <p id="questionOpt2" class="questionOpt"></p>
                     </div>
-                    <span class="questionAcron"></span>
-                    <span class="questionRef"></span>
+                    <p class="questionAcron"></p>
+                    <p class="questionRef"></p>
                 </div>
             </div>
         </div>
@@ -188,12 +299,44 @@
             <img src="./assets/img/cpBtn.png" class="cpBtn footerBtn">
             <img src="./assets/img/refBtn.png" class="refBtn footerBtn">
         </div>
+        <div id="pveEndPanel" class="hidden">
+            <div id="pveEndPanelWrapper" class="wrapper">
+                <h1 id="pveEndText" class="pink"></h1>
+                <div class="btnsContainer">
+                    <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+                </div>
+            </div>
+        </div>
+        <div id="pvpEndPanel" class="hidden">
+            <div id="pvpEndPanelWrapper" class="wrapper">
+                <div id="pvpEndPanelContainer">
+                    <div id="pvpEndPlayer1">
+                        <h2 id="pvpEndPlayer1Text"></h2>
+                        <div id="pvpEndPlayer1Icon">
+                            <img src="./assets/img/cross.png" style="max-width: 100px; max-height: 100px; margin-right: 15px;">
+                            <img src="./assets/img/pvpEndPlayer1.png" style="max-width: 100px;">
+                        </div>
+                    </div>
+                    <h1 class="pink">VS</h1>
+                    <div id="pvpEndPlayer2">
+                        <h2 id="pvpEndPlayer2Text" class="pink"></h2>
+                        <div id="pvpEndPlayer2Icon">
+                            <img src="./assets/img/circle.png" style="max-width: 100px; max-height: 100px; margin-right: 15px;">
+                            <img src="./assets/img/pvpEndPlayer2.png" style="max-width: 100px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="btnsContainer">
+                    <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
+                </div>
+            </div>
+        </div>
         <div id="correctPopup" class="hidden popup">
             <div id="correctPopupWrapper" class="wrapper">
                 <div class="popupContainer">
                     <h2 class="closePopupBtn pink">X</h2>
                     <h1 class="pink">COMPLIMENTI,<br/>RISPOSTA CORRETTA!</h1>
-                    <h2 class="questionCom"></h2>
+                    <h2 class="questionCom light-pink"></h2>
                     <p class="questionAcron"></p>
                     <span class="questionRef"></span>
                 </div>
@@ -204,7 +347,7 @@
                 <div class="popupContainer">
                     <h2 class="closePopupBtn pink">X</h2>
                     <h1 class="pink">PECCATO,<br/>RISPOSTA SBAGLIATA!</h1>
-                    <h2 class="questionCom pink"></h2>
+                    <h2 class="questionCom light-pink"></h2>
                     <p class="questionAcron"></p>
                     <span class="questionRef"></span>
                 </div>
@@ -214,17 +357,25 @@
             <div id="exitPopupWrapper" class="wrapper">
                 <div class="popupContainer">
                     <h2 class="closePopupBtn pink">X</h2>
-                    <h1 class="pink">SEI SICURO DI VOLER<br/>ABBANDONARE IL GIOCO?<br/>ATTENTO, POTRESTI PERDERE<br/>I TUOI VANTAGGI!</h1>
+                    <h1 class="pink">SEI SICURO DI VOLER<br/>ABBANDONARE IL GIOCO?<br/>ATTENTO, POTRESTI PERDERE<br/>I PUNTI ACQUISITI FINORA!</h1>
                 </div>
                 <div class="btnsContainer">
                     <img src="./assets/img/nextBtn.png" class="nextBtn footerBtn">
                 </div>
             </div>
         </div>
+        <span class="vevaCode">MM: 466-IT-2100026 Depositato in AIFA il xx/xx/2021</span>
     </section>
 
-    <span id="vevaCode">MM: 466-IT-2100026</span>
     <img id="logo" src="./assets/img/logo.png" width="25%"/>
+    <div id=videoContainer></div>
+    <div id=rcpContainer></div>
+    <div id="closeIframeContainer" class="hidden">
+        <div class="btnsContainer" style="align-items: center;">
+            <img src="./assets/img/closeBtn.png" style="max-height: 85%;" class="backBtn footerBtn">
+        </div>
+    </div>
+    
     
     <script src="index.js"></script>
 </body>
