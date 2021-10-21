@@ -313,12 +313,12 @@ $("#eventBtn").click(() => {
 });
 
 $("#programBtn").click(() => {
-    $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/631080634?h=f8255fd42f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+    $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/636050004?h=287c7579bd&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
     $("#closeIframeContainer").show();
     setTimeout(() => {
         $("#videoContainer").html("");
         $("#closeIframeContainer").hide();
-    }, 115000);
+    }, 95000);
 });
 
 $("#closeIframeContainer .backBtn").click(() => {
