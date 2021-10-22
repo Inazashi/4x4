@@ -318,7 +318,7 @@ $("#programBtn").click(() => {
     setTimeout(() => {
         $("#videoContainer").html("");
         $("#closeIframeContainer").hide();
-    }, 95000);
+    }, 81000);
 });
 
 $("#closeIframeContainer .backBtn").click(() => {
