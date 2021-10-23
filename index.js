@@ -57,7 +57,7 @@ function pickQuestions() {
     let pool = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
     let out = [];
     for (i = 0; i < 16; ++i) {
-        picked = Math.floor(Math.random() * (pool.length))
+        picked = Math.floor(Math.random() * (pool.length));
         out.push(pool[picked]);
         pool.splice(picked, 1);
     }
@@ -362,7 +362,7 @@ $("#closeIframeContainer .backBtn").click(() => {
     $("#closeIframeContainer").hide();
     if (video1Timer) clearTimeout(video1Timer);
     if (video2Timer) clearTimeout(video2Timer);
-})
+});
 
 $("#homeSectionVideos .backBtn").click(() => {
     $("#homeSectionVideos").fadeOut(500);
