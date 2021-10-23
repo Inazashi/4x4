@@ -44,8 +44,14 @@ let state = {
     ]
 }
 
-let timer = null;
-const timerTimeout = 150000;
+let globalTimer = null;
+let video1Timer = null;
+let video2Timer = null;
+let homeTimer = null;
+const globalTimerTimeout = 240000;
+const video1TimerTimeout = 117000;
+const video2TimerTimeout = 83000;
+const homeTimerTimeout = 300000;
 
 function pickQuestions() {
     let pool = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
@@ -274,6 +280,8 @@ function reset() {
     $("#gameSection .btnsContainer").removeClass("transparent");
     $("#player1Points").html("0");
     $("#player2Points").html("0");
+    $("#videoContainer").html("");
+    $("#rcpContainer").html("");
     $("#questionText").html("");
     $("#questionOpt0").html("");
     $("#questionOpt1").html("");
@@ -281,14 +289,31 @@ function reset() {
     $(".questionCom").html("");
     $(".questionRef").html("");
     $(".questionAcron").html("");
+    videoLoop();
+}
+
+function videoLoop() {
+    homeTimer = window.setTimeout(() => {
+        $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/631080634?h=f8255fd42f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+        $("#closeIframeContainer").show();
+        video1Timer = window.setTimeout(() => {
+            $("#videoContainer").html("");
+            $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/637522998?h=43a1b435cd&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+            video2Timer = window.setTimeout(() => {
+                $("#videoContainer").html("");
+                $("#closeIframeContainer").hide();
+                videoLoop();
+            }, video2TimerTimeout);
+        }, video1TimerTimeout);
+    }, homeTimerTimeout);
 }
 
 $("body").click(() => {
-    if (timer) clearTimeout(timer);
-    timer = window.setTimeout(() => {
+    if (globalTimer) clearTimeout(globalTimer);
+    globalTimer = window.setTimeout(() => {
         reset();
         $("#homeSection").fadeIn(500);
-    }, timerTimeout);
+    }, globalTimerTimeout);
 });
 
 /*-----HOME SECTION-----*/
@@ -296,35 +321,47 @@ $("body").click(() => {
 $("#videosBtn").click(() => {
     $("#homeSection").fadeOut(500);
     $("#homeSectionVideos").fadeIn(500);
+    if (homeTimer) clearTimeout(homeTimer);
 });
 
 $("#gameBtn").click(() => {
     $("#homeSection").fadeOut(500);
     $("#homeSectionGame").fadeIn(500);
+    if (homeTimer) clearTimeout(homeTimer);
 });
 
 $("#eventBtn").click(() => {
     $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/631080634?h=f8255fd42f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
     $("#closeIframeContainer").show();
-    setTimeout(() => {
+    video1Timer = window.setTimeout(() => {
         $("#videoContainer").html("");
-        $("#closeIframeContainer").hide();
-    }, 115000);
+            $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/637522998?h=43a1b435cd&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+        video2Timer = window.setTimeout(() => {
+            $("#videoContainer").html("");
+            $("#closeIframeContainer").hide();
+        }, video2TimerTimeout);
+    }, video1TimerTimeout);
 });
 
 $("#programBtn").click(() => {
-    $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/637522998?h=43a1b435cd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+    $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/637522998?h=43a1b435cd&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
     $("#closeIframeContainer").show();
-    setTimeout(() => {
+    video2Timer = window.setTimeout(() => {
         $("#videoContainer").html("");
-        $("#closeIframeContainer").hide();
-    }, 81000);
+        $("#videoContainer").html(`<iframe class="video" src=https://player.vimeo.com/video/631080634?h=f8255fd42f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:90%;height:90%;padding:5vh 5vw;background-color: black;" title="Video Teaser The Sequence"></iframe>`);
+        video1Timer = window.setTimeout(() => {
+            $("#videoContainer").html("");
+            $("#closeIframeContainer").hide();
+        }, video1TimerTimeout);
+    }, video2TimerTimeout);
 });
 
 $("#closeIframeContainer .backBtn").click(() => {
     $("#videoContainer").html("");
-    $("#rcpContainer").html("")
+    $("#rcpContainer").html("");
     $("#closeIframeContainer").hide();
+    if (video1Timer) clearTimeout(video1Timer);
+    if (video2Timer) clearTimeout(video2Timer);
 })
 
 $("#homeSectionVideos .backBtn").click(() => {
